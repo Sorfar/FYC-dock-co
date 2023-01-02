@@ -2,7 +2,7 @@ name: CI/CD backend
 on:
   push:
     branches:
-      - 5-CICD-fullCorrection
+      - main
     paths:
       - 'BACK/API.Library/**'
       - '.github/workflows/workflow-backend.yaml'
