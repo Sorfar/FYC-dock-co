@@ -16,4 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name : Checkout repository
+        env:
+          MY_VAR: Hi there! My name is
         uses: actions/checkout@v3
