@@ -16,6 +16,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name : Checkout repository
-        env:
-          MY_VAR: Hi there! My name is
         uses: actions/checkout@v3
+
+      - name : Set up environment dotnet
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: Build all projects
+        run: dotnet build -c Release
+        shell: bash
