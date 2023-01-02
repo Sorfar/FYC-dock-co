@@ -6,3 +6,7 @@ on:
     paths:
       - 'BACK/API.Library/**'
       - '.github/workflows/workflow-backend.yaml'
+
+defaults:
+  run:
+    working-directory: ./BACK/API.Library
