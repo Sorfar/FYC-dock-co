@@ -10,3 +10,10 @@ on:
 defaults:
   run:
     working-directory: ./BACK/API.Library
+
+jobs:
+  api-library:
+    runs-on: ubuntu-latest
+    steps:
+      - name : Checkout repository
+        uses: actions/checkout@v3
