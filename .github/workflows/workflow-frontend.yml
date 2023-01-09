@@ -1,0 +1,28 @@
+name: CI/CD frontend
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'FRONT/**'
+      - '.github/workflows/workflow-frontend.yaml'
+      
+defaults: 
+  run:
+    working-directory: ./FRONT/APP.Web/vaultapp
+    
+jobs:
+  front-angular:
+    runs-on: ubuntu-lastest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        
+      - name: Build all projects
+        run: |
+          npm install -g @angular/cli
+          npm install
+          ng build
